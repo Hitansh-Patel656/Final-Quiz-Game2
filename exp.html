@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Battle Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ccc;
+      color: #120202;
+      scroll-behavior: smooth;
+    }
+
+    
+    .menu {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #4aa8cd;
+      padding: 20px 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-end;
+      font-family: 'Sigmar', sans-serif;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 10px 20px;
+    }
+
+    .menu ul li a:hover {
+      color: rgb(40, 53, 200);
+    }
+
+    .section1 {
+      padding-top: 120px;
+      background: url('fourth3.png') center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .my-montserrat-text {
+      font-size: 2.5rem;
+      color: rgb(14, 96, 36);
+      margin-bottom: 20px;
+      font-weight:bold;
+    }
+
+    .section1 h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: rgb(248, 3, 183);
+      margin-bottom: 10px;
+    }
+
+    .square2 {
+      background-color: rgb(174, 176, 242);
+      border-radius: 30px;
+      padding: 20px;
+      max-width: 100%;
+      margin: 30px auto 0;
+      color: rgb(97, 80, 193);
+    }
+
+    .square2 h1,
+    .square2 h2 {
+      margin: 10px 0;
+    }
+
+    .signup-button {
+      background-color: white;
+      border: 4px solid rgb(8, 86, 181);
+      border-radius: 20px;
+      color: blue;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .signup-button:hover {
+      background-color: rgb(8, 86, 181);
+      color: white;
+    }
+
+    .section2, .section3 {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section2 {
+      background-color: rgb(149, 211, 247);
+    }
+
+    .section3 {
+      background-color: rgb(140, 200, 240);
+    }
+
+    .content3 h1 {
+      font-size: 1.8rem;
+      color: rgb(107, 23, 119);
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery {
+      width: 90%;
+      max-width: 300px;
+      border: 3px solid #3c23f8;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+ 
+    .gallery:hover {
+      transform: translateY(-10px);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .desc {
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .que {
+      font-size: 2rem;
+      color: #3c23f8;
+      margin-bottom: 20px;
+    }
+
+    .ans {
+      font-size: 1rem;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .ans1 {
+      margin-bottom: 10px;
+      color: rgb(254, 11, 31);
+      transition: color 0.3s ease;
+    }
+
+    .ans1:hover {
+      color: rgb(44, 87, 52);
+    }
+
+    .bottom-part {
+      background-color: rgb(169, 183, 238);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .my-montserrat-text {
+        font-size: 3rem;
+      }
+
+      .signup-button {
+        font-size: 1.2rem;
+      }
+
+      .que {
+        font-size: 2.5rem;
+      }
+
+      .ans {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .menu {
+        justify-content: center;
+      }
+
+      .menu li a {
+        font-size: 16px;
+      }
+
+      .square2 h1, .square2 h2 {
+        font-size: 1rem;
+      }
+
+      .signup-button {
+        width: 100%;
+        max-width: 250px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+    </ul>
+  </div>
+
+  <div class="section1">
+    <div class="my-montserrat-text">"Brain Battle: Test Your Knowledge!!"</div>
+    <h1>🎯 "Are you ready to prove you're the smartest? Let’s quiz!"</h1>
+    <h1>Best of Luck!!!</h1>
+    <div class="square2">
+      <h1>Start Adapting your curriculum in minutes.</h1>
+      <h2>The best way to create, adapt and deliver resources for every student.</h2>
+      <h2>🎯 Dive into the fun of quizzes and discover what you know!</h2>
+      <a href="quiz_signup.html"><button class="signup-button">Sign Up</button></a>
+    </div>
+  </div>
+
+  <div class="section2">
+    <div class="content3">
+      <h1>Reflections of Reality</h1>
+    </div>
+    <div class="image-container">
+      <div class="gallery">
+        <img src="img3.jpg" alt="Image 1">
+        <div class="desc">Welcome, quiz wizards</div>
+      </div>
+      <div class="gallery">
+        <img src="img5.jpg" alt="Image 2">
+        <div class="desc">Don't give up, you're doing great</div>
+      </div>
+      <div class="gallery">
+        <img src="img7.jpg" alt="Image 3">
+        <div class="desc">Let the brain games begin!</div>
+      </div>
+      <div class="gallery">
+        <img src="img8.jpeg" alt="Image 4">
+        <div class="desc">Every question is a chance to grow smarter</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section3">
+    <div class="que">What are Quiz Games?</div>
+    <div class="ans">
+      <div class="ans1">Quiz games put your mind to the test on various subjects. Some quizzes test your ability to think logically and creatively, while others challenge your knowledge of world events.</div>
+      <div class="ans1">1. Trivia Quizzes: General knowledge questions on various topics.</div>
+      <div class="ans1">2. Educational Quizzes: Designed for learning and improving skills.</div>
+      <div class="ans1">3. Puzzle-Based Quizzes: Brain teasers, riddles, and logic puzzles.</div>
+      <div class="ans1">4. Speed Quizzes: Answer quickly before time runs out.</div>
+      <div class="ans1">5. Live Quiz Shows: Interactive online or TV-based quizzes.</div>
+    </div>
+  </div>
+
+  <div class="bottom-part">
+    <p>&copy; 2025 My Awesome Website. All rights reserved.</p>
+  </div>
+</body>
+</html>
