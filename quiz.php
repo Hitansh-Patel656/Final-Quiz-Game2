@@ -11,7 +11,8 @@
       if(isset($_POST["username"]))
       {
         
-        $_SESSION['username']=$username;
+        $_SESSION['username']=$_POST["username"];
+        $username=$_SESSION['username'];
         // $_SESSION['no_questions']=$questions;
         // $_SESSION['topic']=$topic;
       }
@@ -20,13 +21,12 @@
       {      
         $_SESSION['no_questions']=$_POST["questions"];
         $questions=$_SESSION['no_questions'];
-        // $_SESSION['no_questions']=$questions;
-        
       }
 
       if(isset($_POST["topic"]))
       {
-        $_SESSION['topic']=$topic;
+        $_SESSION['topic']=$_POST["topic"];
+        $topic=$_SESSION['topic'];
       }
 
     }
@@ -245,11 +245,11 @@
             $r_temp=0;
             while($i<=$_SESSION['no_questions'])
             {
-              $r_temp-$r_num;
-              $r_num=mt_rand(1,30);
+              $r_temp=$r_num;
+              $r_num=mt_rand(1,50);
               if($r_temp==$r_num)
               {
-                $r_num=mt_rand(1,30);
+                $r_num=mt_rand(1,50);
               }
  
               if($_SESSION['topic']=="History") // for database of history.
@@ -259,7 +259,7 @@
                 $row = mysqli_fetch_assoc($result);
               }
 
-              else // for database of Geometry.
+              else // for database of Geography.
               {
                 $sql = "SELECT * FROM questions1 WHERE `sno`=$r_num";
                 $result = mysqli_query($conn, $sql);
@@ -281,11 +281,11 @@
               if ($i==1)
                 echo "<div class='navigation-buttons'><a class='nav-button' href='#q". ($i+1) ."'>Next</a></div>";
               
-              else if($i==5)
+              else if($i==$_SESSION['no_questions'])
                 echo "<div class='navigation-buttons'><a
                 class='nav-button' href='#q". ($i-1) ."'>Previous</a></div>";
               
-              else if($i>1 && $i<5)
+              else if($i>1 && $i<$_SESSION['no_questions'])
               {
                 echo "<div class='navigation-buttons'><a class='nav-button' href='#q". ($i-1) ."'>Previous</a></div><br>";
                 echo "<div class='navigation-buttons'><a
@@ -298,7 +298,7 @@
               echo "</section>";
             }
           
-    
+            
           ?>
           <button type="submit" class="btn btn-primary my-3">Submit</button>
         </form>
